@@ -1,0 +1,176 @@
+.button{
+    position: absolute;
+    right: 10px;
+  }
+
+  .imageSize
+  {
+    height:40%;
+     width:74%
+  };
+
+.image 
+    {
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 2px -11px;
+      height: fit-content;
+      width: 101px;
+    }
+
+
+:host {
+    .gk {
+    &-container {
+      margin: 10px 20px;
+    }
+    
+      &-grid-view {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        mat-card{
+          width:300px;
+          position: relative;
+          box-shadow: 0 14px 28px rgba(110, 108, 108, 0.22), 0 10px 10px rgba(110, 108, 108, 0.22);
+        }
+        mat-card-header{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          margin: 4px 16px 14px 0px;
+        }
+      }
+      &-list-view {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        mat-card{
+          width:500px;
+          position: relative;
+          box-shadow: 0 14px 28px rgba(110, 108, 108, 0.22), 0 10px 10px rgba(110, 108, 108, 0.22);
+        }
+        mat-card-header{
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          margin: 4px 16px 14px 0px;
+        }
+      }
+    }
+  }
+
+  .chip{
+    outline: none;
+    background-color: transparent;
+}
+
+.gk-container:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+// .mouseover
+// {
+//   opacity: 1;
+//   visibility: hidden;
+// }
+
+// .container {
+//   @include display(none);
+//     padding: 10px;
+//   color: black;
+//   background-color: skyblue;
+//   &-header {
+//    @extend .flex-box;
+//    p {
+//      background-color: red;
+//      padding:  0 5px;
+//      border-radius: 10px;
+//    }
+//   }
+//   &-footer {
+//     height: 20px;
+//     &-buttons {
+//     @extend .flex-box;
+//     }
+//   }
+//   &.has-hover  {
+//     @include display(flex);
+//   }
+// }
+
+// .showme{ 
+//   display: none;
+// }
+// .showhim:hover .showme{
+//   display : block;
+// }
+// .showhim:hover .ok{
+//   display : none;
+// }
+
+.message{
+  opacity: 0.4;
+  font-size: 24px;
+}
+
+.searchicon{
+  height: 136px;
+  margin: 20px;
+  opacity: 0.2;
+  width: 120px;
+  font-size: 161px;
+}
+
+.empty
+{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 129px;
+}
+
+.saveButton
+{
+    float: right;
+}
+
+
+// @mixin display($value) {
+//   .header-icon, .container-footer-buttons  {
+//     display: $value;
+//    }
+// }
+
+
+// .flex-box {
+//  display: flex;
+//    justify-content: space-between;
+// }
+// .container {
+//  @include display(none);
+//    padding: 10px;
+//  color: black;
+//  background-color: skyblue;
+//  &-header {
+//   @extend .flex-box;
+//   p {
+//     background-color: red;
+//     padding:  0 5px;
+//     border-radius: 10px;
+//   }
+//  }
+//  &-footer {
+//    height: 20px;
+//    &-buttons {
+//    @extend .flex-box;
+//    }
+//  }
+//  &.has-hover  {
+//    @include display(flex);
+//    background-color: lightgrey;
+//  }
+// }

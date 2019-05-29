@@ -1,0 +1,51 @@
+<body>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card fxFlex="20%;" fxFlex.xs="70%" fxFlex.sm="40%" fxFlex.md="30%">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+        <div align="center">
+          <img
+            src="data:image/png;base64,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"
+            height=25% width=25%>
+        </div><br>
+        <div align="center"><label><b>Sign In For Fundoo Note</b></label></div><br>
+        <div class="form-group" class="example-container">
+          <mat-form-field>
+            <input matInput placeholder="Enter your email" type="email" formControlName="email" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <mat-error *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <mat-error *ngIf="f.email.errors.required">
+                *email Id is <strong>required</strong>
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group" class="example-container">
+          <mat-form-field>
+            <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
+              formControlName="password" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <mat-icon matSuffix (click)="hide = !hide">
+              {{hide ? 'visibility_off' : 'visibility'}}
+            </mat-icon>
+            <mat-error *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <mat-error *ngIf="f.password.errors.required">
+                *password is <strong>required</strong>
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-card-actions>
+            <div class="button-row">
+              <button mat-raised-button [disabled]="loginForm.invalid">Sign In</button>
+              <!-- < <<div class="Sign Up"><a class="btn btn-link" routerLink="/register">Sign Up</a></div> -->
+              <button mat-raised-button routerLink="/register">Sign Up</button>
+
+            </div>
+            <!-- <<a class="btn btn-link">Sign Up</a> -->
+          </mat-card-actions>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</body>

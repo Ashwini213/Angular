@@ -1,29 +1,36 @@
 <body>
   <div fxLayout="row" fxLayoutAlign="center center">
-    <mat-card fxFlex="20%;" fxFlex.xs="70%" fxFlex.sm="40%" fxFlex.md="30%">
+    <mat-card fxFlex="30%;" fxFlex.xs="70%" fxFlex.sm="50%" fxFlex.md="30%">
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
         <div align="center">
           <img
-            src="data:image/jpeg;base64,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"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLjGdhBiLDu_thXlj-GYqeowZHnbMCIQy2maGpVWzhKXiAukVZjQ"
             height=25% width=50%>
         </div><br>
         <div align="center"><label><b>Registration for FundoNote</b></label></div><br>
 
-        <div class="form-group" class="example-container">
+        <!-- <div class="form-group" class="example-container">
           <mat-form-field>
             <input matInput placeholder="Enter your id" type="text" formControlName="id" class="form-control"
               [ngClass]="{ 'is-invalid': submitted && f.id.errors }" />
+            <mat-icon matSuffix>
+              id
+            </mat-icon>
             <mat-error *ngIf="submitted && f.id.errors" class="invalid-feedback">
               <mat-error *ngIf="f.id.errors.required">
                 *Id is <strong>required</strong>
               </mat-error>
             </mat-error>
           </mat-form-field>
-        </div>
+        </div> -->
         <div class="form-group" class="example-container">
           <mat-form-field>
             <input matInput placeholder="Enter your name" type="text" formControlName="name" class="form-control"
               [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+              <mat-icon matSuffix>person</mat-icon>
+            <mat-icon matSuffix>
+              
+            </mat-icon>
             <mat-error *ngIf="submitted && f.name.errors" class="invalid-feedback">
               <mat-error *ngIf="f.name.errors.required">
                 *name is <strong>required</strong>
@@ -35,6 +42,9 @@
           <mat-form-field>
             <input matInput placeholder="Enter your email" type="text" formControlName="email" class="form-control"
               [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <mat-icon matSuffix>
+              email
+            </mat-icon>
             <mat-error *ngIf="submitted && f.email.errors" class="invalid-feedback">
               <mat-error *ngIf="f.email.errors.required">
                 *email Id is <strong>required</strong>
@@ -46,8 +56,12 @@
           <mat-form-field>
             <input matInput placeholder="Enter your phonenumber" type="text" formControlName="phonenumber"
               class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+            <mat-icon matSuffix>
+              phonenumber
+            </mat-icon>
             <mat-error *ngIf="submitted && f.phonenumber.errors" class="invalid-feedback">
               <mat-error *ngIf="f.phonenumber.errors.required">
+
                 *phonenumber is <strong>required</strong>
               </mat-error>
             </mat-error>
@@ -79,3 +93,4 @@
     </mat-card>
   </div>
 </body>
+ 

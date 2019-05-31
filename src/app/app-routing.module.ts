@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { SidenavbarComponent } from './components/sidenavbar/sidenavbar.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -12,75 +11,69 @@ import { PasswordResetComponent } from './components/password-reset/password-res
 import { NoteSearchBodyComponent } from './components/note-search-body/note-search-body.component';
 import { MainNotesComponent } from './components/main-notes/main-notes.component';
 import { LabelsComponent } from './components/labels/labels.component';
-import { ImageComponent } from './components/image/image.component';
 import { HashComponent } from './components/hash/hash.component';
 import { HashdailogComponent } from './components/hashdailog/hashdailog.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { EditLabelsComponent } from './components/edit-labels/edit-labels.component';
-import { CollaboratorsComponent } from './components/collaborators/collaborators.component';
 import { ChangeColorComponent } from './components/change-color/change-color.component';
 import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
+import { LoginComponent } from './components/login/login.component';
+import { CollaboratorsComponent } from './components/collaborators/collaborators.component';
+import { AuthGuard } from './guard/auth.guard';
 
 const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
   {
-    path: 'register', component: RegisterComponent
+    path: 'login',
+    component: LoginComponent
   },
   {
-    path: 'sidenavbar', component: SidenavbarComponent
+    path: 'register',
+    component: RegisterComponent
   },
   {
-    path: 'remainder', component: RemainderComponent
+    path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'main-notes',
+        component: MainNotesComponent
+      },
+      {
+        path: 'archive-notes',
+        component: ArchiveNoteComponent
+      },
+      {
+        path: 'search',
+        component: SearchNoteComponent
+      },
+      {
+        path: 'remainder',
+        component: RemainderComponent
+      },
+      {
+        path: 'label/:labelName',
+        component: LabelsComponent
+      },
+      {
+        path: '',
+        component: SidenavbarComponent
+      },
+      {
+        path: '',
+        redirectTo: 'main-notes',
+        pathMatch: 'full'
+      }
+    ]
   },
   {
-    path: 'search-note', component: SearchNoteComponent
+    path: 'resetpassword/:id',
+    component: PasswordResetComponent
   },
   {
-    path: 'update-note', component: UpdateNoteComponent
-  },
-  {
-    path: 'pin-note', component: PinNoteComponent
-  },
-  {
-    path: 'password-reset', component: PasswordResetComponent
-  },
-  {
-    path: 'note-search-body', component: NoteSearchBodyComponent
-  },
-  {
-    path: 'main-notes', component: MainNotesComponent
-  },
-  {
-    path: 'labels', component: LabelsComponent
-  },
-  {
-    path: 'image', component: ImageComponent
-  },
-  {
-    path: 'hash', component: HashComponent
-  },
-  {
-    path: 'hashdailog', component: HashdailogComponent
-  },
-  {
-    path: 'forgot-password', component: ForgotPasswordComponent
-  },
-  {
-    path: 'edit-labels', component: EditLabelsComponent
-  },
-  {
-    path: 'collaborators', component: CollaboratorsComponent
-  },
-  {
-    path: 'changhe-color', component: ChangeColorComponent
-  },
-  {
-    path: 'arvhive-note', component: ArchiveNoteComponent
-  },
-
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
-];
+    path: '**',
+    redirectTo: 'login'
+  }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

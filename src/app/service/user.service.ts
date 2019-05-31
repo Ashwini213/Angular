@@ -1,16 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
-import { UtilService } from './util.service';
+import { environment } from 'src/environments/environment';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
-import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
+import { HttpHeaders } from '@angular/common/http';
+import { UtilService } from './util.service';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
   public token = localStorage.getItem('token');
   public httpheaders() {
     // console.log("localStorage.getItem('token')::", localStorage.getItem('token'));
@@ -29,7 +29,7 @@ export class UserService {
   }
 
   register(user) {
-    return this.httpUtil.postService(environment.base_url + 'register', user);
+    return this.httpUtil.postService(environment.base_url + 'registration', user);
   }
 
   forgotPassword(user) {
@@ -47,16 +47,16 @@ export class UserService {
   // uploadImage(file): Observable<any> {
   //   const formdata = new FormData();
   //   formdata.append('file', file);
-  //   return this.httpUtil.postToUploadImage(environment.base_url + 'photo/' + this.token, formdata, {
-  //     reportProgress: true,
-  //     responseType: 'text'
-  //    }
-  //    );
-  //  }
+  //   // return this.httpUtil.postToUploadImage(environment.base_url + 'photo/' + this.token, formdata {
+  //   //   reportProgress: true,
+  //   //   responseType: 'text'
+  //   }
+  //   );
+  // }
 
-  downloadImage(): Observable<any> {
-    return this.httpUtil.getService(environment.base_url + 'photo', this.httpheaders());
-  }
+  // downloadImage(): Observable<any> {
+  //   return this.httpUtil.getService(environment.base_url + 'photo', this.httpheaders());
+  // }
 
   removeImage() {
     return this.httpUtil.deleteService(environment.base_url + 'photo', this.httpheaders());

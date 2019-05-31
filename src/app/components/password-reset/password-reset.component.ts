@@ -37,7 +37,7 @@ export class PasswordResetComponent implements OnInit {
     if (this.resetForm.invalid) {
       return;
     }
-    if (this.resetForm.value.password != this.resetForm.value.confirmpassword) {
+    if (this.resetForm.value.password !== this.resetForm.value.confirmpassword) {
       this.snackBar.open('failed', 'both password should be same', {
         duration: 2000
       });

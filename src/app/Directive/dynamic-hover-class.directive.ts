@@ -1,7 +1,8 @@
 import { Directive, Input, HostListener, Renderer2, ElementRef } from '@angular/core';
 
 @Directive({
-  selector: '[dynamicHoverClass]'
+// tslint:disable-next-line: directive-selector
+  selector: '[DynamicHoverClass]'
 })
 export class DynamicHoverClassDirective {
 

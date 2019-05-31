@@ -7,12 +7,16 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UtilService {
-  public theme$: Subject<any> = new Subject();
-  // public labels$:Label[];
-  public search$: Subject<any> = new Subject();
-  public label$: Label;
 
   constructor(private http: HttpClient) { }
+
+  public theme$: Subject<any> = new Subject();
+   public labels$: Label[];
+  public search$: Subject<any> = new Subject();
+  public label$: Label;
+  login(user: any) {
+    throw new Error('Method not implemented.');
+  }
   postService(url, object) {
     return this.http.post<any>(url, object, {observe : 'response'});
   }
@@ -35,15 +39,13 @@ export class UtilService {
     return this.label$;
   }
 
-  // public setLabels(labels:Label[])
-  // {
-  //   this.labels$=labels;
-  // }
+  public setLabels(labels: Label[]) {
+    this.labels$ = labels;
+  }
 
-  // public getLabels()
-  // {
-  //   return this.labels$;
-  // }
+  public getLabels() {
+    return this.labels$;
+  }
 
   public setSearch(search: string) {
     this.search$.next(search);
@@ -120,5 +122,3 @@ export class UtilService {
     return this.http.delete<any>(url, {});
   }
 }
-
-

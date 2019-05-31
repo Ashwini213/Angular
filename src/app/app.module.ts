@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,10 +14,8 @@ import { AddImageComponent } from './components/add-image/add-image.component';
 import { AddNoteLabelsComponent } from './components/add-note-labels/add-note-labels.component';
 import { ArchiveNoteComponent } from './components/archive-note/archive-note.component';
 import { ChangeColorComponent } from './components/change-color/change-color.component';
-import { CollaboratorsComponent } from './components/collaborators/collaborators.component';
 import { EditLabelsComponent } from './components/edit-labels/edit-labels.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
-import { ImageComponent } from './components/image/image.component';
 import { LabelsComponent } from './components/labels/labels.component';
 import { MainNotesComponent } from './components/main-notes/main-notes.component';
 import { NoteSearchBodyComponent } from './components/note-search-body/note-search-body.component';
@@ -35,6 +32,8 @@ import { SearchPipe } from './search.pipe';
 import { SearchNotesPipe } from './search-notes.pipe';
 import { UserPipe } from './user.pipe';
 import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime' ;
+import { LoginComponent } from './components/login/login.component';
+import { CollaboratorsComponent } from './components/collaborators/collaborators.component';
 
 
 @NgModule({
@@ -51,7 +50,6 @@ import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime' ;
     CollaboratorsComponent,
     EditLabelsComponent,
     ForgotPasswordComponent,
-    ImageComponent,
     LabelsComponent,
     MainNotesComponent,
     NoteSearchBodyComponent,

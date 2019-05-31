@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpHeaders } from '@angular/common/http';
-import { UtilService } from './util.service';
+
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material';
-import { Observable } from 'rxjs';
+import { HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { Observable } from 'rxjs';
+import { UtilService } from './util.service';
 
 @Injectable({
   providedIn: 'root'
@@ -94,3 +95,36 @@ export class NoteService {
     return this.httpUtil.removeImage(environment.note_url + 'photo/' + imagesId);
   }
 }
+// import { Injectable } from '@angular/core';
+
+// @Injectable({
+//   providedIn: 'root'
+// })
+// export class NoteService {
+//   addLabelToNote(noteId: any, label: any) {
+//     throw new Error("Method not implemented.");
+//   }
+//   retrieveLabels() {
+//     throw new Error("Method not implemented.");
+//   }
+//   createLabel(newLabel: { labelName: any; }) {
+//     throw new Error("Method not implemented.");
+//   }
+//   addLabelToNote(noteId: any, label: any) {
+//     throw new Error("Method not implemented.");
+//   }
+//   retrieveLabels() {
+//     throw new Error("Method not implemented.");
+//   }
+//   createLabel(newLabel: { labelName: any; }) {
+//     throw new Error("Method not implemented.");
+//   }
+//   updateNote(note: any, noteId: any) {
+//     throw new Error('Method not implemented.');
+//   }
+//   retrieveNotes() {
+//     throw new Error('Method not implemented.');
+//   }
+
+//   constructor() { }
+// }
